@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to root_path do %> 
+  	<img src="https://www.dxagency.com/wp-content/themes/dxagency%202018/dist/images/dx-logo.svg" id="nav-logo"  width="30" height="30">
+  <% end %>
+  <div class="navbar" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</nav>
