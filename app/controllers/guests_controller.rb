@@ -26,14 +26,14 @@ class GuestsController < ApplicationController
   # POST /guests.json
   def create
     @guest = Guest.where(email: params[:guest][:email]).first_or_initialize
-
     respond_to do |format|
       if @guest.update(guest_params)
         format.html {}
-        format.js {}
+        format.js { }
         format.json { render json: @guest }
       else
         format.html { render :new }
+        format.js {}
         format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
     end
@@ -61,6 +61,25 @@ class GuestsController < ApplicationController
       format.html { redirect_to guests_url, notice: 'Guest was successfully deleted.' }
       format.json { head :no_content }
       format.js {}
+    end
+  end
+
+  def csv_download
+    csv_download = request.query_parameters[:download]
+
+    case csv_download 
+    when "all-guests" 
+      @guests = Guest.all
+      filename = "all-guests"
+    when "yes-guests" 
+      puts "it was yes guests"
+    when "unknown-guests" 
+      puts "it was uknown"
+    else
+      puts "it was something else"
+    end
+    respond_to do |format|
+      format.csv { send_data @guests.to_csv, filename: "users-#{Date.today}.csv" }
     end
   end
 

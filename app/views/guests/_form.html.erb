@@ -16,10 +16,10 @@
   </div>
 
   <div class="field w-100">
-    <%= form.text_field :email, placeholder: "Email", :class => "w-100"  %>
+    <%= form.email_field :email, placeholder: "Email", :class => "w-100"  %>
   </div>
 
-  <div class="field d-flex checkbox-wrapper">
+  <div id="guest_status" class="field d-flex checkbox-wrapper">
     <label class="container-checkbox" style="margin-right: 75px;">
       <%= form.radio_button :status, :true %> 
       <span>

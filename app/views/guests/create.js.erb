@@ -1,1 +1,33 @@
-console.log("wooho")
+var errors = "<%= @guest.errors.any? %>";
+
+if (errors == "false") {
+
+	$("form").hide();
+	var guestStatus = "<%= @guest.status %>";
+	if (guestStatus == "false") {
+		$(".response").text("We’re sorry that you cannot attend. You’ll be missed!");
+	}
+
+	$("#thank_you").show();
+
+} else {
+
+	<% @guest.errors.each do |error| %> 
+		$("#guest_" + "<%= error %>").addClass("error");
+		if ("<%= error %>" == "status") {
+			var status_wrapper = $("#guest_" + "<%= error %>")
+			$("#guest_status").on("click", function(){
+				$(".container-checkbox input").each(function(){
+					if ($(this).is(":checked")) {
+						status_wrapper.removeClass("error");
+					}
+				})
+			})
+		} else {
+			$("#guest_" + "<%= error %>").on("focus", function(){
+				$(this).removeClass("error");
+			})	
+		}
+	<% end %>
+
+}

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
    root to: "guests#new"
    resources :guests
 
+   get 'csv-download', to: 'guests#csv_download', defaults: { format: :csv }
+
 	# Rails.application.routes.draw do
 	#   devise_for :users, controllers: {
 	#     sessions: 'users/sessions'
