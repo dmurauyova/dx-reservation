@@ -44,8 +44,9 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
+        format.html { redirect_to guests_url, notice: 'Guest was successfully updated.' }
         format.json { render :show, status: :ok, location: @guest }
+        format.js {}
       else
         format.html { render :edit }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
