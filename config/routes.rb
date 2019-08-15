@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    resources :guests
 
    get 'csv-download', to: 'guests#csv_download', defaults: { format: :csv }
+   get '/.well-known/acme-challenge/:id' => 'home#letsencrypt'
 
 	# Rails.application.routes.draw do
 	#   devise_for :users, controllers: {
