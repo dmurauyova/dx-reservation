@@ -6,3 +6,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+#new_user {
+	max-width: 300px;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 20px;
+	label, input {
+		font-size: 18px;
+		width: 100%;
+	}
+	#user_remember_me, label[for="user_remember_me"]  {
+		width: auto;
+	}
+	.field {
+		padding-top: 10px;
+	}
+	.btn {
+		margin: 0 auto;
+		background-color: #ee4034;
+		color: #fff;
+		border-radius: 0;
+		width: 100%;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+}

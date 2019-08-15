@@ -72,14 +72,16 @@ class GuestsController < ApplicationController
       @guests = Guest.all
       filename = "all-guests"
     when "yes-guests" 
-      puts "it was yes guests"
+      @guests = Guest.where(status: true)
+      filename = "rsvp-yes"
     when "unknown-guests" 
-      puts "it was uknown"
+      @guests = Guest.where(status: nil)
+      filename = "norsvp"
     else
       puts "it was something else"
     end
     respond_to do |format|
-      format.csv { send_data @guests.to_csv, filename: "users-#{Date.today}.csv" }
+      format.csv { send_data @guests.to_csv, filename: "#{filename}-#{Date.today}.csv" }
     end
   end
 
