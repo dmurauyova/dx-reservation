@@ -8,6 +8,6 @@ class HomeController < ApplicationController
     end
 
     def letsencryptid
-      render plain: "Qu5UJZe30bFUDDygtAXA_J6Ea091gAPp1KC82J5ikIo.r7yEVXUTgppuPQapG1FrNLORwns35W36Ze-w659l2hg"
+      render plain: "q-wXb1eSGMK5iZmoECMDv6yrVT2pQa21QG0cpoS7ph4.r7yEVXUTgppuPQapG1FrNLORwns35W36Ze-w659l2hg"
     end
 end
