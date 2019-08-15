@@ -5,7 +5,7 @@ Rails.application.routes.draw do
    resources :guests
 
    get 'csv-download', to: 'guests#csv_download', defaults: { format: :csv }
-   get '/.well-known/acme-challenge/:id' => 'home#letsencrypt'
+   get '/.well-known/acme-challenge/HMZpLgJaVjopjttEP1LsaeMcX4WEiBq-7Aj6vmPepJk' => 'home#letsencrypt'
    get '/.well-known/acme-challenge/SVb9IPoCQiAqfHmtJUW_VXzQpov3GAkM4ZtqkSlFiHQ' => 'home#letsencryptid'
 
 	# Rails.application.routes.draw do
