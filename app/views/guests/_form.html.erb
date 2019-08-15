@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field d-flex justify-content-between">
-    <%= form.text_field :first_name, placeholder: "*First Name" %><%= form.text_field :last_name, placeholder: "*Last Name" %>
+    <%= form.text_field :first_name, placeholder: "First Name*" %><%= form.text_field :last_name, placeholder: "Last Name*" %>
   </div>
 
   <div class="field w-100">
-    <%= form.email_field :email, placeholder: "*Email", :class => "w-100"  %>
+    <%= form.email_field :email, placeholder: "Email*", :class => "w-100"  %>
   </div>
 
   <div id="guest_status" class="field d-flex checkbox-wrapper">
