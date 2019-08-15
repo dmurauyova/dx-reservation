@@ -3,6 +3,7 @@ var errors = "<%= @guest.errors.any? %>";
 if (errors == "false") {
 
 	$("form").hide();
+	$(".please-complete").hide();
 	var guestStatus = "<%= @guest.status %>";
 	if (guestStatus == "false") {
 		$(".response").text("We’re sorry that you cannot attend. You’ll be missed!");
