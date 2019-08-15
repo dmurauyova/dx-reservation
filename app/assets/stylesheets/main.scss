@@ -1,13 +1,8 @@
-@font-face {
-    font-family: 'montserratbold';
-    src: font-url('montserrat-bold.woff2') format('woff2'),
-         font-url('montserrat-bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}	
-
 body {
-	font-family: 'montserratbold';
-	color: red;
+	font-family: 'Unna', serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

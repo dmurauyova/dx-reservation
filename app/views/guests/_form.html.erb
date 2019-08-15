@@ -1,0 +1,42 @@
+<%= form_with(model: guest, local: false) do |form| %>
+  <% if guest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+
+      <ul>
+      <% guest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field d-flex justify-content-between">
+    <%= form.text_field :first_name, placeholder: "First Name" %><%= form.text_field :last_name, placeholder: "Last Name" %>
+  </div>
+
+  <div class="field w-100">
+    <%= form.text_field :email, placeholder: "Email", :class => "w-100"  %>
+  </div>
+
+  <div class="field d-flex checkbox-wrapper">
+    <label class="container-checkbox" style="margin-right: 75px;">
+      <%= form.radio_button :status, :true %> 
+      <span>
+        Yes, I'll be there!
+      </span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="container-checkbox">
+      <%= form.radio_button :status, :false %>
+      <span>
+        Sorry, I can't make it.
+      </span>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+  <div class="actions text-center">
+    <%= form.submit 'Submit', :class => 'submit_guest btn' %>
+  </div>
+<% end %>
