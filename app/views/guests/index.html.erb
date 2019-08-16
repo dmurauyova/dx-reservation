@@ -3,20 +3,20 @@
 <p id="notice" class="text-center"><%= notice %></p>
 
 <div class="container">
-  <div id="downloads" class="d-flex justify-content-center">
-     <div class="csv-download all-guests">
+  <div id="downloads" class="d-flex justify-content-center flex-wrap">
+     <div class="csv-download all-guests pt-3">
       <p>All Guest list</p>
       <%= link_to csv_download_path(download: "all-guests") do %>
         <button class="btn">Download</button>
       <% end %>
     </div>
-    <div class="csv-download yes-guests">
+    <div class="csv-download yes-guests pt-3">
       <p>Guests who RSVP "Yes"</p>
       <%= link_to csv_download_path(download: "yes-guests") do %>
         <button class="btn">Download</button>
       <% end %>
     </div>
-     <div class="csv-download unknown-guests">
+     <div class="csv-download unknown-guests pt-3">
       <p>Guests who didn't RSVP</p>
       <%= link_to csv_download_path(download: "unknown-guests") do %>
         <button class="btn">Download</button>
