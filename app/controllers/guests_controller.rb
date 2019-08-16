@@ -2,6 +2,8 @@ require 'pry'
 class GuestsController < ApplicationController
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, only: [:index, :edit, :destroy]
+
   # GET /guests
   # GET /guests.json
   def index
