@@ -27,7 +27,7 @@ class GuestsController < ApplicationController
   # POST /guests
   # POST /guests.json
   def create
-    @guest = Guest.where(email: params[:guest][:email]).first_or_initialize
+    @guest = Guest.where(email: /.*#{params[:guest][:email]}.*/i).first_or_initialize
     respond_to do |format|
       if @guest.update(guest_params)
         format.html {}
