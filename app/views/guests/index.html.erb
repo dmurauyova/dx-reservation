@@ -23,6 +23,12 @@
         <button class="btn">Download</button>
       <% end %>
     </div>
+    <div class="csv-download yes-guests pt-3">
+      <p>Guests who RSVP "No"</p>
+      <%= link_to csv_download_path(download: "no-guests") do %>
+        <button class="btn">Download</button>
+      <% end %>
+    </div>
      <div class="csv-download unknown-guests pt-3">
       <p>Guests who didn't RSVP</p>
       <%= link_to csv_download_path(download: "unknown-guests") do %>

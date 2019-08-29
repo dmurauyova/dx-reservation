@@ -80,6 +80,9 @@ class GuestsController < ApplicationController
     when "unknown-guests" 
       @guests = Guest.where(status: nil)
       filename = "norsvp"
+    when "no-guests"
+      @guests = Guest.where(status: false)
+      filename = "rsvp-no"
     else
       puts "it was something else"
     end
